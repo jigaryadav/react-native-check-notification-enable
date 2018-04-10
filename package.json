@@ -1,6 +1,6 @@
 {
   "name": "react-native-check-notification-enable",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "use to check is notification enable or disable only for android",
   "main": "notifiactionManager.js",
   "keywords": [

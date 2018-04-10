@@ -59,7 +59,7 @@ var NotificationManager = require('react-native-check-notification-enable');
 
 ```es6
 // for es6
-import { NotificationManager } from 'react-native-check-notification-enable'
+import  NotificationManager from 'react-native-check-notification-enable'
 
 NotificationManager.areNotificationsEnabled().then((e)=>{
   console.log(e);
