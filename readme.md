@@ -1,5 +1,5 @@
 ## react-native-check-notification-enable
-Check if notifications are enabled for a React ative device running on Android.
+Check if notifications are enabled for a React Native app running on Android.
 
 | Version | React Native Support | Android Support | iOS Support |
 |---|---|---|---|
