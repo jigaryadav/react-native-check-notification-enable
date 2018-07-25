@@ -20,7 +20,7 @@ public class NotificationManager implements ReactPackage {
     modules.add(new NotificationManagerModule(reactContext));
     return modules;
   }
-  @Override
+  // @Override
   public List<Class<? extends JavaScriptModule>> createJSModules() {
       return Collections.emptyList();
   }
