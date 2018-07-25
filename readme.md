@@ -1,5 +1,12 @@
 ## react-native-check-notification-enable
-Device Information for react-native
+Check if notifications are enabled for a React ative device running on Android.
+
+| Version | React Native Support | Android Support | iOS Support |
+|---|---|---|---|
+| 1.1.0 | 0.47-0.54 | 8.1 | NONE |
+| 1.0.4 | 0.46 | 8.1 | NONE |
+
+*Complies with [react-native-version-support-table](https://github.com/dangnelson/react-native-version-support-table)*
 
 ## Installation
 
@@ -9,7 +16,7 @@ First you need to install react-native-check-notification-enable:
 npm install react-native-check-notification-enable --save
 ```
 
-* In `android/setting.gradle`
+* In `android/settings.gradle`
 
 ```gradle
 ...
@@ -57,12 +64,17 @@ public class MainActivity extends ReactActivity {
 var NotificationManager = require('react-native-check-notification-enable');
 ```
 
-```es6
+```javascript
 // for es6
-import  NotificationManager from 'react-native-check-notification-enable'
+import NotificationManager from 'react-native-check-notification-enable'
 
+// use as a promise...
 NotificationManager.areNotificationsEnabled().then((e)=>{
   console.log(e);
 }).catch((e)=>{
   console.log(e);
 })
+
+// ...or an async function
+const enabled = await NotificationManager.areNotificationsEnabled();
+```
