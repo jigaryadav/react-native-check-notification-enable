@@ -1,17 +1,49 @@
 {
-  "name": "react-native-check-notification-enable",
-  "version": "1.0.4",
-  "description": "use to check is notification enable or disable only for android",
-  "main": "notifiactionManager.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jigaryadav/react-native-check-notification-enable.git"
+  "_from": "react-native-check-notification-enable",
+  "_id": "react-native-check-notification-enable@1.0.4",
+  "_inBundle": false,
+  "_integrity": "sha512-4XwDNDYAj1TdR88UT6m0ftz/S0IJ0RkDahuOyIxA5Xd06fzOThN2AbzETanyd3DsV3CyXfZ/kvX5RB/E38CIKA==",
+  "_location": "/react-native-check-notification-enable",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "react-native-check-notification-enable",
+    "name": "react-native-check-notification-enable",
+    "escapedName": "react-native-check-notification-enable",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
   },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/react-native-check-notification-enable/-/react-native-check-notification-enable-1.0.4.tgz",
+  "_shasum": "5773e04da6f88d859d6f0c70e3aa60460df83beb",
+  "_spec": "react-native-check-notification-enable",
+  "_where": "/Users/jordan/Work/Projects/ValueRetail/Code/BicesterVillage",
+  "author": {
+    "name": "jigar yadav"
+  },
+  "bugs": {
+    "url": "https://github.com/jigaryadav/react-native-check-notification-enable/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "use to check is notification enable or disable only for android",
+  "homepage": "https://github.com/jigaryadav/react-native-check-notification-enable#readme",
   "keywords": [
     "react-native",
     "react-component",
     "android",
     "notification"
   ],
-  "author": "jigar yadav"
+  "main": "notificationManager.js",
+  "name": "react-native-check-notification-enable",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jigaryadav/react-native-check-notification-enable.git"
+  },
+  "version": "1.1.0"
 }

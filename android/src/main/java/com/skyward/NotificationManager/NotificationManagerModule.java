@@ -18,7 +18,7 @@ import java.util.List;
 import com.facebook.systrace.Systrace;
 import com.facebook.systrace.SystraceMessage;
 
-import com.facebook.react.LifecycleState;
+// import com.facebook.react.LifecycleState;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactRootView;
 import com.facebook.react.bridge.ReactContext;
