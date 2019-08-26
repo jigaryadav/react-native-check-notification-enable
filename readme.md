@@ -37,6 +37,8 @@ dependencies {
 
 * register module (in MainActivity.java)
 
+> RN 0.60.+ not reqire below config, only <= 0.59.9 require to config in MainApplication
+
 On newer versions of React Native (0.18+):
 
 ```java
