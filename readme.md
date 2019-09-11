@@ -17,6 +17,20 @@ First you need to install react-native-check-notification-enable:
 npm install react-native-check-notification-enable --save
 ```
 
+If your React Native version is 0.60 or higher, that's all you need to do. If not, you'll need to perform the steps described below.
+
+### Android
+
+#### Automatic installation
+
+Run the following command:
+
+```bash
+react-native link react-native-check-notification-enable
+```
+
+#### Manual installation
+
 * In `android/settings.gradle`
 
 ```gradle
@@ -37,8 +51,6 @@ dependencies {
 
 * register module (in MainActivity.java)
 
-> RN 0.60.+ not reqire below config, only <= 0.59.9 require to config in MainApplication
-
 On newer versions of React Native (0.18+):
 
 ```java
@@ -58,6 +70,16 @@ public class MainActivity extends ReactActivity {
         new MainReactPackage());
     }
 }
+```
+
+### iOS
+
+#### Automatic installation
+
+Run the following command:
+
+```bash
+react-native link react-native-check-notification-enable
 ```
 
 ## Example
