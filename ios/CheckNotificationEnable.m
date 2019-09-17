@@ -57,4 +57,37 @@ RCT_EXPORT_METHOD(areNotificationsEnabled:(RCTPromiseResolveBlock)resolve reject
 	}
 }
 
+RCT_EXPORT_METHOD(retrieveGlobalNotificationSettings:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
+	if (@available(iOS 10.0, *)) {
+		[[UNUserNotificationCenter currentNotificationCenter] getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
+			NSMutableDictionary *notificationSettings = [NSMutableDictionary dictionary];
+			[notificationSettings setValue:[NSNumber numberWithBool:mapAuthorizationStatus(settings.authorizationStatus)] forKey:@"isEnabled"];
+			[notificationSettings setValue:[NSNumber numberWithBool:mapNotificationSetting(settings.badgeSetting)] forKey:@"isBadgeEnabled"];
+			[notificationSettings setValue:[NSNumber numberWithBool:mapNotificationSetting(settings.soundSetting)] forKey:@"isSoundEnabled"];
+			[notificationSettings setValue:[NSNumber numberWithBool:mapNotificationSetting(settings.notificationCenterSetting)] forKey:@"shownInNotificationCenter"];
+			[notificationSettings setValue:[NSNumber numberWithBool:mapNotificationSetting(settings.lockScreenSetting)] forKey:@"shownInLockScreen"];
+			[notificationSettings setValue:[NSNumber numberWithBool:mapNotificationSetting(settings.alertSetting)] forKey:@"shownAsHeadsupDisplay"];
+			resolve(notificationSettings);
+		}];
+	} else {
+		// Fallback for iOS <10
+		BOOL remoteNotificationsEnabled = [UIApplication sharedApplication].isRegisteredForRemoteNotifications;
+		UIUserNotificationType userNotificationSettingsTypes = ([UIApplication sharedApplication].currentUserNotificationSettings).types;
+		NSMutableDictionary *notificationSettings = [NSMutableDictionary dictionary];
+		[notificationSettings setValue:[NSNumber numberWithBool:remoteNotificationsEnabled] forKey:@"isEnabled"];
+		[notificationSettings setValue:[NSNumber numberWithBool:(userNotificationSettingsTypes & UIUserNotificationTypeBadge) != 0] forKey:@"isBadgeEnabled"];
+		[notificationSettings setValue:[NSNumber numberWithBool:(userNotificationSettingsTypes & UIUserNotificationTypeSound) != 0] forKey:@"isSoundEnabled"];
+		[notificationSettings setValue:[NSNumber numberWithBool:TRUE] forKey:@"shownInNotificationCenter"];
+		[notificationSettings setValue:[NSNumber numberWithBool:TRUE] forKey:@"shownInLockScreen"];
+		[notificationSettings setValue:[NSNumber numberWithBool:(userNotificationSettingsTypes & UIUserNotificationTypeAlert) != 0] forKey:@"shownAsHeadsupDisplay"];
+		resolve(notificationSettings);
+	}
+
+}
+
+RCT_EXPORT_METHOD(retrieveNotificationChannels:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
+	// iOS does not support notification channels
+	resolve([NSArray array]);
+}
+
 @end
