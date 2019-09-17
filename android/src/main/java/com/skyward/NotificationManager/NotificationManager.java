@@ -9,7 +9,6 @@ import com.facebook.react.bridge.JavaScriptModule;
 import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.ViewManager;
-import android.app.Activity;
 
 
 public class NotificationManager implements ReactPackage {
