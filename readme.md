@@ -3,6 +3,7 @@ Check if notifications are enabled for a React Native app running on Android.
 
 | Version | React Native Support | Android Support | iOS Support |
 |---|---|---|---|
+| 1.3.0 | 0.60  | 9 | 9.0 |
 | 1.2.0 | 0.60  | 9 | NONE |
 | 1.1.0 | 0.47-0.54 | 8.1 | NONE |
 | 1.0.4 | 0.46 | 8.1 | NONE |
