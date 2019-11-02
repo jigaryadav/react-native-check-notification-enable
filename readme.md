@@ -88,18 +88,45 @@ react-native link react-native-check-notification-enable
 ```javascript
 var NotificationManager = require('react-native-check-notification-enable');
 ```
-
 ```javascript
 // for es6
 import NotificationManager from 'react-native-check-notification-enable'
-
+```
+### Check notification is enable or not 
+```
 // use as a promise...
 NotificationManager.areNotificationsEnabled().then((e)=>{
-  console.log(e);
+  console.log(e); //true or false
 }).catch((e)=>{
   console.log(e);
 })
 
 // ...or an async function
 const enabled = await NotificationManager.areNotificationsEnabled();
+```
+
+### Get all global notification settings
+```
+NotificationManager.retrieveGlobalNotificationSettings().then((settings)=>{
+  console.log(settings);
+  // {
+  //   isEnabled: boolean;
+  //   isBadgeEnabled: boolean;
+  //   isSoundEnabled: boolean;
+  //   shownInNotificationCenter: boolean;
+  //   shownInLockScreen: boolean;
+  //   shownAsHeadsupDisplay: boolean;
+  // }
+}).catch((e)=>{
+  console.log(e);
+})
+```
+
+### Get notification Channel
+```
+NotificationManager.retrieveNotificationChannels().then((ChannelArray)=>{
+  console.log(ChannelArray); //[]
+}).catch((e)=>{
+  console.log(e);
+})
 ```
