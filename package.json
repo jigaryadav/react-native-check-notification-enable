@@ -45,6 +45,7 @@
     "type": "git",
     "url": "git+https://github.com/jigaryadav/react-native-check-notification-enable.git"
   },
+  "types": "react-native-check-notification-enable.d.ts",
   "version": "1.3.0",
   "license": "MIT"
 }
